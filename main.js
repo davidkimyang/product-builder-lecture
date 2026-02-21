@@ -15,6 +15,24 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
+const contactForm = document.getElementById('contact-form');
+const formSuccess = document.getElementById('form-success');
+
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(contactForm);
+    const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+        contactForm.reset();
+        contactForm.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+    }
+});
+
 generateBtn.addEventListener('click', () => {
     const numbers = new Set();
     while (numbers.size < 6) {
