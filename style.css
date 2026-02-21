@@ -194,3 +194,16 @@ h1 {
 .hidden {
     display: none;
 }
+
+.disqus-container {
+    width: 100%;
+    max-width: 720px;
+    text-align: left;
+}
+
+.disqus-container h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1.6em;
+    transition: color 0.3s ease;
+}
